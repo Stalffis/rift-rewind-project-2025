@@ -199,6 +199,12 @@
                 <p>Level: ${data.summoner.level}</p>
             </div>
         `;
+
+        fetch('championship.json')
+        .then(response => response.json())
+        .then(championshipData => {
+            if (data.topChampions && data.topChampions.length > 0) {
+            const champions = Object.values(championshipData.data); // all champions as array
          // Find the matching champion info by ID (key)
         const championInfo = championshipData.find(c => c.key == champ.championId);
         // If found, use its name and image; otherwise, fallback
