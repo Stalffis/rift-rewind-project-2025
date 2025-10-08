@@ -412,131 +412,156 @@ footer {
 }
 
 /* LEAGUE LOOKUP STYLES */
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #010a13;
-    color: #fff;
-    overflow-x: hidden;
-}
-
 .league-lookup {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
-    background: radial-gradient(circle at 20% 30%, #0a1420, #010a13 70%);
-}
-
-#cyber-bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    background: transparent;
-    pointer-events: none;
-    opacity: 0.25;
-}
-
-.league-bg-overlay {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 30% 30%, rgba(0,255,255,0.05), transparent 60%);
-    z-index: 0;
-    mix-blend-mode: screen;
-}
-
-.lookup-container {
-    position: relative;
-    z-index: 1;
-    background: rgba(5, 15, 25, 0.85);
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
-    width: 320px;
-}
-
-.lookup-container h2 {
-    margin-bottom: 1rem;
-    color: #00f5ff;
-    text-shadow: 0 0 10px #00f5ff;
-}
-
-.form-group {
-    margin-bottom: 1rem;
-    text-align: left;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.3rem;
-    font-size: 0.9rem;
-}
-
-input, select {
-    width: 100%;
-    padding: 0.6rem;
+    background: white;
     border-radius: 8px;
-    border: none;
-    outline: none;
-    background: rgba(187, 173, 173, 0.1);
-    color: #fff;
+    padding: 40px;
+    margin-top: 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-button {
-    width: 100%;
-    padding: 0.8rem;
-    background: linear-gradient(90deg, #00f5ff, #c89b3c);
-    border: none;
-    border-radius: 10px;
-    color: #000;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
+.league-lookup h3 {
+    color: #232f3e;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-align: center;
 }
 
-button:hover {
-    transform: scale(1.03);
+.league-lookup > p {
+    font-size: 16px;
+    color: #687078;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.lookup-form-container {
+    max-width: 500px;
+    margin: 0 auto 32px;
 }
 
 .lookup-message {
-    display: none;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border-radius: 8px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 24px;
+    font-weight: 500;
+    text-align: center;
 }
 
 .lookup-message.success {
-    background: rgba(0, 255, 128, 0.2);
-    color: #00ff8c;
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
 }
 
 .lookup-message.error {
-    background: rgba(255, 0, 0, 0.2);
-    color: #ff6464;
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #232f3e;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #f8fafc;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #c89b3c;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(200, 155, 60, 0.1);
+}
+
+.lookup-submit-btn {
+    background: #c89b3c;
+    color: white;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.lookup-submit-btn:hover {
+    background: #b8862e;
+    transform: translateY(-1px);
+}
+
+.lookup-submit-btn:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Results display */
+.summoner-results {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 24px;
 }
 
 .summoner-card {
-    margin-top: 1rem;
-    background: rgba(0, 255, 255, 0.1);
-    padding: 1rem;
-    border-radius: 10px;
+    background: white;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.summoner-card h5 {
+    color: #c89b3c;
+    font-size: 24px;
+    margin-bottom: 8px;
 }
 
 .champions-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .champion-card {
-    background: rgba(200, 155, 60, 0.1);
-    border-radius: 10px;
-    padding: 0.5rem;
-    font-size: 0.9rem;
+    background: white;
+    border-radius: 6px;
+    padding: 16px;
+    border-left: 4px solid #c89b3c;
 }
+
+.champion-card p {
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .league-lookup {
+        padding: 24px;
+    }
+    
+    .champions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* END LEAGUE LOOKUP STYLES */
